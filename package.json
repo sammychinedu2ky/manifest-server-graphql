@@ -1,0 +1,20 @@
+{
+  "name": "react-manifest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server-express": "^2.9.15",
+    "archiver": "^3.1.1",
+    "graphql": "^14.5.8",
+    "materialize-css": "^1.0.0-rc.2",
+    "nodemon": "^2.0.2",
+    "sharp": "^0.23.4"
+  }
+}
