@@ -24,6 +24,7 @@ const resolvers = {
   },
   Mutation: {
     uploadFile: async (_, { file, manifest }) => {
+      console.log("generation started")
       const { createReadStream, filename } = await file;
       let req = {
         dir: genid(),
