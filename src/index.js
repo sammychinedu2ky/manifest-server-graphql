@@ -1,12 +1,21 @@
 let express = require("express");
 let app = express();
 const genid = require("uuid");
+var cors = require('cors')
 let createFolder = require("./process/createFolders");
 let createImages = require("./process/createImages");
 let writeManifest = require("./process/writeManifest");
 let zipFile = require("./process/zipFile");
 let delDocs = require("./process/delDocs");
 const { ApolloServer, gql } = require("apollo-server-express");
+
+
+var corsOptions = {
+  origin: 'https://manifest-gen.netlify.app/',
+  optionsSuccessStatus: 200 
+}
+
+app.use(cors(corsOptions))
 const typeDefs = gql`
   type Query {
     users: String
