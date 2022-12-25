@@ -15,7 +15,7 @@ var corsOptions = {
   optionsSuccessStatus: 200 
 }
 
-//app.use(cors(corsOptions))
+app.use(cors(corsOptions))
 const typeDefs = gql`
   type Query {
     users: String
@@ -60,9 +60,9 @@ const resolvers = {
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  // cors: {
-  //   origin: ["https://manifest-gen.netlify.app"]
-  // },
+  cors: {
+    origin: ["https://manifest-gen.netlify.app"]
+  },
 });
 
 server.applyMiddleware({ app,cors: corsOptions });
