@@ -11,7 +11,7 @@ const { ApolloServer, gql } = require("apollo-server-express");
 
 
 var corsOptions = {
-  origin: 'https://manifest-gen.netlify.app/',
+  origin: 'https://manifest-gen.netlify.app',
   optionsSuccessStatus: 200 
 }
 
