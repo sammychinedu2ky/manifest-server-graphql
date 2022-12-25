@@ -34,9 +34,13 @@ const resolvers = {
       };
 
       await createFolder(req);
+      console.log("foldercreated")
       await createImages(req);
+      console.log("imagescreated")
       await writeManifest(req);
+      console.log("manifestfilecreate")
       await zipFile(req);
+      console.log("zipfilecreated")
       await delDocs(req);
       console.log("generation ended")
       return req.fileString;
