@@ -38,7 +38,7 @@ const resolvers = {
       await writeManifest(req);
       await zipFile(req);
       await delDocs(req);
-
+      console.log("generation ended")
       return req.fileString;
     }
   }
