@@ -10,12 +10,12 @@ let delDocs = require("./process/delDocs");
 const { ApolloServer, gql } = require("apollo-server-express");
 
 
-var corsOptions = {
-  origin: 'https://manifest-gen.netlify.app',
-  optionsSuccessStatus: 200 
-}
+// var corsOptions = {
+//   origin: 'https://manifest-gen.netlify.app',
+//   optionsSuccessStatus: 200 
+// }
 
-app.use(cors(corsOptions))
+app.use(cors())
 const typeDefs = gql`
   type Query {
     users: String
@@ -59,13 +59,10 @@ const resolvers = {
 
 const server = new ApolloServer({
   typeDefs,
-  resolvers,
-  cors: {
-    origin: ["https://manifest-gen.netlify.app"]
-  },
+  resolvers
 });
 
-server.applyMiddleware({ app,cors: corsOptions });
+server.applyMiddleware({ app });
 app.get("/", (req, res) => {
   return res.json({ say: "hi" });
 });
