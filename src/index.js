@@ -60,12 +60,12 @@ const resolvers = {
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  cors: {
-    origin: ["https://manifest-gen.netlify.app"]
-  },
+  // cors: {
+  //   origin: ["https://manifest-gen.netlify.app"]
+  // },
 });
 
-server.applyMiddleware({ app });
+server.applyMiddleware({ app,cors: corsOptions });
 app.get("/", (req, res) => {
   return res.json({ say: "hi" });
 });
