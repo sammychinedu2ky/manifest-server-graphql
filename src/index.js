@@ -15,7 +15,7 @@ const { ApolloServer, gql } = require("apollo-server-express");
 //   optionsSuccessStatus: 200 
 // }
 
-app.use(cors())
+//app.use(cors())
 const typeDefs = gql`
   type Query {
     users: String
