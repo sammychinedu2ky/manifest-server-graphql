@@ -60,7 +60,8 @@ const resolvers = {
 
 const server = new ApolloServer({
   typeDefs,
-  resolvers
+  resolvers,
+  cors: cors(corsOptions)
 });
 
 server.applyMiddleware({ app,cors:corsOptions });
