@@ -11,12 +11,12 @@ const { ApolloServer, gql } = require("apollo-server-express");
 
 
 var corsOptions = {
-  origin: "*",
+  origin: "https://manifest-gen.netlify.app",
   credentials: true,
   optionsSuccessStatus: 200 
 }
 
-app.use(cors())
+app.use(cors(corsOptions))
 const typeDefs = gql`
   type Query {
     users: String
